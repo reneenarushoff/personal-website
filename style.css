@@ -2,27 +2,28 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    cursor: url("URL_OF_YOUR_CURSOR_IMAGE"), auto
-
+    position: relative;
+    background-image: url("./photos/water_61.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-family: 'Conformity';
+    font-family: 'OCRA';
     font-size: 30px;
-    background: #84172C;
-    color: #B0E0E6;
-    max-height: 150px; 
+    text-shadow: 4px 4px #00CEC8;
     padding: 15px;
     text-align: center;
     cursor: url('https://cur.cursors-4u.net/nature/nat-7/nat614.cur'), auto;
 }
 header h1 {
   margin: 0;
-  font-size: 125px;
+  font-size: 80px;
   line-height: 1;
 }
 
@@ -46,29 +47,261 @@ nav ul li a {
 }
 p {
     font-size: 16px;
+    font-family: 'Pixel';
     color: #333;
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
     padding: 20px;
 }
 
 .container {
-  display: flex; /* Enable Flexbox on the parent */
-  height: 100vh; /* Make the container take the full height of the viewport */
+  display: flex; 
+  min-height: 100vh;
+  margin-top: -40px; 
 }
 .section {
   flex: 1; /* Distribute available space equally between the sections */
   padding: 20px;
-  /* Add box-sizing to ensure padding doesn't increase the total width */
   box-sizing: border-box;
 }
 .left-section {
-    color: #fff;
-}
-
+    position: relative;   /* make the .wave positioned relative to this box */
+    overflow: hidden; 
+    width: 200px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    background: #7f9dda;
+    padding: 10px;
+    margin: 20px;
+    margin-left: 40px;
+    border-radius: 10px;
+    border-style: ridge;
+    border-width: 5px;
+} 
 .right-section {
-
+    background-image: url('./photos/goldie.JPG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:100px;
+    height: 400px;
+    padding: 10px;
+    margin: 20px;
+    margin-right: 40px;
+    border-radius: 10px;
+    border-style: ridge;
+    border-width: 5px;
 }
+
+.bottom-right-section {
+    background-image: url('./photos/bladee.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:540px;
+    padding: 10px;
+    height: 300px;
+    margin: 20px;
+    margin-right: 0px;
+    margin-left: -15px;
+    margin-top: -350px;
+    border-radius: 10px;
+    border-style: ridge;
+    border-width: 5px;
+}
+
+.left-section .wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;             
+  height: 100px;
+  background-image: url('./photos/wave.png');
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  background-size: auto 100px;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+/* overlay tint that blends with the wave image */
+.left-section .wave::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 179, 170, 0.65); /* blue-green tint — change hex/alpha as desired */
+  mix-blend-mode: screen;              /* try screen | multiply | overlay to taste */
+  pointer-events: none;
+}
+
+.left-section .wave1 {
+  bottom: 0;
+  opacity: 0.65;
+  animation: wave-animation 10s linear infinite;
+  z-index: 0;
+}
+
+.left-section .wave2 {
+  bottom: 12px;
+  opacity: 0.45;
+  animation: wave-animation 14s linear infinite reverse;
+  z-index: 0;
+}
+.left-section .wave3 {
+  bottom: 24px;
+  opacity: 0.30;
+  animation: wave-animation 18s linear infinite;
+  z-index: 0;
+}
+.left-section .wave4 {
+  bottom: 36px;
+  opacity: 0.18;
+  animation: wave-animation 22s linear infinite reverse;
+  z-index: 0;
+}
+
+/* ensure left-section content sits above the waves */
+.left-section > *:not(.wave) {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes wave-animation {
+  from { background-position-x: 0; }
+  to   { background-position-x: -1000px; }
+}
+
+
+.bubbles {
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    flex-wrap: nowrap;
+}
+
+.about, .blog, .medias, .contact, .fish1 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.about {
+    background-image: url(./photos/bubbles.png);
+    height: 125px;
+    width: 125px;
+    align-self: flex-start;
+    margin-right: 40px;
+    margin-bottom: 18px;
+}
+
+.about:hover {
+    height: 135px;
+    width: 135px;
+}
+
+.blog {
+    background-image: url(./photos/bubbles.png);
+    height: 150px;
+    width: 150px;
+    margin-right: 30px;
+}
+
+.blog:hover {
+    height: 115px;
+    width: 115px;
+    
+}
+
+.medias {
+    background-image: url(./photos/bubbles.png);
+    height: 125px;
+    width: 125px;
+    margin-bottom: -5px;
+}
+
+.medias:hover {
+    height: 155px;
+    width: 155px;
+}
+
+.contact {
+    background-image: url(./photos/bubbles.png);
+    height: 130px;
+    width: 130px;
+    margin-bottom: 30px;
+}
+
+.contact:hover {
+    height: 140px;
+    width: 140px;
+}
+
+.about a, .blog a, .contact a, .medias a, .fish1 a{
+    text-decoration: none;
+    color: #fff;
+    filter: drop-shadow(1px 1px 0 #00CEC8);
+    transition: 0.3s;
+    font-family: Inconsolata;
+    text-align: center;
+}
+
+.about a {
+    font-size: 28px;
+    transform: rotate(-14deg);
+}
+
+.blog a {
+    font-size: 23px;
+    transform: rotate(-14deg);
+}
+
+.medias a {
+    font-size: 26px;
+    transform: rotate(-14deg);
+}
+
+.contact a {
+    font-size: 26px;
+    transform: rotate(-14deg);
+}
+
+.about a:hover, .blog a:hover, .medias a:hover, .contact a:hover, .fish1 a:hover {
+    color: #FFFF00;
+    filter: drop-shadow(1px 1px 0 #ffffff00);
+    text-decoration: underline;
+}
+
+.fish1 {
+  background-image: url(./photos/sealife_7.png);
+  position: absolute;
+  align-self: flex-start;
+  right: 40px;
+  top: 30px;
+  font-size: 26px;
+  transform: rotate(14deg);
+  height: 170px;
+  width: 170px;
+}
+.fish1:hover {
+    height: 160px;
+}
+
+.small-bubble1 {
+  position: absolute;
+  left: -50px
+}
+
+.small-bubble1 img {
+  height: 50px;
+}
+
 
 footer {
     position: fixed;
@@ -77,18 +310,39 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #f29e92;
+    /*background-color: #333;*/
     color: #B0E0E6;
     text-align: center;
-    padding: 10px;
+    padding: 10px;        
+    height: 100px;
+    background-image: url('./photos/wave.png');
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    font-family: 'Pixel';
+    background-size: auto 100px;
+    pointer-events: none;
+    transform: translateZ(0);
+    animation: wave-animation 10s linear infinite;
+    z-index: 0;
 }
 
 @font-face {
-  font-family: 'Conformity';
-  src: url('fonts/ConformityPersonalUseRegular-1GMDg.ttf') format('truetype');
+  font-family: 'OCRA';
+  src: url('fonts/OCR-a___.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pixel';
+  src: url("fonts/pixel_times/Pixel Times.ttf");
 }
 
 @media (pointer: fine) {
