@@ -5,16 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nora Shoof</title>
-    <style>
-        body{}
-        
-    </style>
-   <!--<section>
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
-    </section>-->
 </head>
 <body>
     <script src="script.js"></script>
@@ -30,6 +20,9 @@
             <div class="blog">
                 <a href="blog.html">blog</a>
             </div>
+            <div class="small-bubble2">
+                <img src="photos/bubbles.png" alt="small bubble2">
+            </div>
             <div class="medias">
                 <a href="library.html">media library</a>
             </div>
@@ -37,62 +30,95 @@
             <a href="contact.html">contact me</a>
             </div>      
             <div class="fish1">
-                <a href="home.html">Go Home</a>
+                <a href="home.html">Swim Home</a>
             </div>   
         </div>
 
     </header>
-    Blog posts how to organize them by month?
-    Subscribe?
-    Featured posts?
-    Blog post form or something
-    <!--<div class="container">
-        <div class="section left-section">
-            <div class = "wave wave1"></div>
-            <div class = "wave wave2"></div>
-            <div class = "wave wave3"></div>
-            <div class = "wave wave4"></div>
 
-            <p style="color: white";>
-                    Welcome to my aquarium. This is to share my posts with friends organically lol.</p>
-
-            <div style="display: flex; align-items: center;">
-                <img src="photos/MD-PURPLE.gif" alt="CD"> 
-                <p style="margin-left: 0; color: white;">What I'm listening to: I'm Reviving <a href="https://www.youtube.com/watch?v=H_EoaZ3eU6k">Artpop</a> by Lady Gaga</p>
-                <img src="photos/back01.png" alt="star" style="height: 35px; margin-left: 17px;"> 
-                <p style="margin-left: 12px; color: white;">What I'm reading: <a href="https://www.goodreads.com/book/show/37004370-the-memory-police">The Memory Police</a> by Yoko Ogawa</p>
-            </div>
-
-            <div style="display: flex; align-items: center;">
-                <img src="photos/IMAC-LIME.gif" alt="star" style="height: 35px; margin-left: 17px;"> 
-                <p style="margin-left: 12px; color: white;">What I'm watching: <a href="https://en.wikipedia.org/wiki/Mad_Men">Mad Men</a> </p>
-            </div>
-
-           
-        </div>
-        <div class="section right-section">
-            <div class="container">
-                <p style="color: white; position: absolute; 
-                            top: 600px;">
-                    RIP Goldie Narushoff 2006-2013</p>
-            </div>
-            <div class="bottom-right-section">
-                <div class="container">
-                    <p style="color: white;">
-                    <br>Here's what you missed:<br>
-
-                    <br>Plants in Tucson<br>
-
-                    <br>My Professional Portfolio<br>
-
-                    <br><a href="https://letterboxd.com/iggypopsmoke/">Tubi Tuesdays</a><br>
-                </p>
+    <div class="container">
+        <div class="sidebar">
+            <p style="color: #FF69B4; font-size: 14px;">This is where I'm dumping all of my posts about random thoughts, I am still trying to decide how I want to organize them, but for now keeping them all here.</p>
+            <div class="blog-navigation">
+                <div class="blog-nav-container">
+                    <h2 class="nav-title" style="font-family: 'Data70'; margin-top: -10px;">Blog Navigation</h2>
+            
+                    <!-- Quick Jump Dropdown -->
+                    <div class="quick-jump">
+                        <label for="post-select" class="jump-label" style="color: #FFFF00; font-family: 'Data70'; margin: 15px">Jump to Post:</label>
+                        <select id="post-select" class="post-dropdown">
+                            <option value="">Select a post...</option>
+                            <option value="post2">Garden updates (March 8, 2026)</option>
+                            <option value="post1">Post 1 - First Post (March 5, 2026)</option>
+                            <!-- TEMPLATE: Add new posts here in this format:
+                            <option value="postX">Post X - Your Post Title (Month Day, Year)</option>
+                            Remember to increment the post number and add newest posts at the top!
+                            -->
+                        </select>
+                    </div>
+                    
+                    <!-- Collapsible Index -->
+                    <div class="blog-index">
+                        <button class="index-toggle" onclick="toggleIndex()" style=" color:white">Click to Show/Hide Post Index</button>
+                        <div id="post-index" class="index-content" style="display: block;">
+                            <h3 style = "font-size: 12px; color:#006994" >All Blog Posts Showing</h3>
+                            <ul class="post-list" style="font-size: 12px; text-align: center;">
+                                <li><a href="#post2">Garden updates (March 8, 2026)</a></li>
+                                <li><a href="#post1">Post 1 - First Post (March 5, 2026)</a></li>
+                                <!-- TEMPLATE: Add new posts here in this format:
+                                <li><a href="#postX">Post X - Your Post Title (Month Day, Year)</a></li>
+                                Remember to increment the post number and add newest posts at the top!
+                                -->
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    
+    
+        <div class="section right-section">
+            <div class="posts">
+            <!--EXAMPLE: Blog posts how to organize them by month?
+            Subscribe?
+            Featured posts?
+            Blog post form or something
+            Phone eats first
+            arts and crafts-->
+
+        
+            <!-- Blog post sections with unique IDs -->
+            <!--
+                <section id="postX" class="post">
+                <h2 class='post-title'>Post Title</h2>
+                <time class='post-date' datetime="YYYY-MM-DD">Month Day, Year</time>
+                <p class='post-content'>[Content of your blog post goes here...]</p>
+                <div class="divider"></div>
+                </section>
+                -->
+            <section id="post2" class="post">
+                <h2 class="post-title">Gardening updates</h2>
+                <time class="post-date" datetime="2026-03-08">March 8, 2026</time>
+                <p class="post-content" style= "color:white">I've been having visions of a garden lately, not sure where this came from but I really want to grow vegetables indoors. But I started trying to re-grow kitchen scraps just to see what woud work. Some of it did and some of it didn't. I tried to regrow greens from the top of a carrot and greens from the bottom of an onion, but the carrot did nothing and the onion just kind of just wilted? But maybe I didn't wait long enough. I also tried to grow peppers from seeds I got from the grocery, which ended up molding, I think because I didn't dry the seeds and just threw them in straight from the pepper. Recently, I had success propagating dill stems from the grocery store, which I didn't think was going to work because it was cut off from the taproot, but there were a couple roots that grew after 5 weeks ?. I am going to plant it and see what happens... Also I threw two garlic cloves in a pot and they grew immediately, which was cool. I started growing basil from seed, and had some trouble germinating until I put the pot on top of the radiator and misted every day with plastic wrap on top so condensation could form. I went to the Seed Swap (lol) yesterday with Olivia so I'm going to plant more seeds soon. Pics below: </p>
+                <div class="divider"></div>
+            </section>
+            <section id="post1" class="post">
+                <h2 class="post-title">First Blog Post</h2>
+                <time class="post-date" datetime="2026-03-05">March 5, 2026</time>
+                <p class="post-content" style= "color:white"> What's up you guys. About 2 months ago I started working remotely every day, at first because of sickness, then because of the snowstorm, and now because of other reasons. But I needed a project to work on to keep myself occupied. So I decided to make this website to replace social media because going on Instagram started making me physically sick, I think. I also wanted to get more into web dev/design so I thought I would just learn and put whatever I wanted on here. This is where I'm putting random stuff that I did or thoughts I have etc etc etc etc. I still feel brain dead but I have a lot of ideas and I guess I wanted somewhere to catalogue everything. Okay bye!</p>
+                <!--<img height="250" src="blog/photos/dietcokegif.gif">-->
+                <!--<img height="250" src="blog/photos/diet.gif">-->
+                <div class="divider"></div>
+            </section>
             </div>
-    </div>-->
-    <footer>
-         2025 Nora Shoof
-    </footer>
+        </div>
+    </div>
+
+    <div class="footer-scene">
+        <img src="./photos/water_69.png" class="footer-rocks" alt="">
+        <footer>
+            <p class="footer-text">2025 Nora Shoof</p>
+        </footer>
+    </div>
 </body>
 </html>
