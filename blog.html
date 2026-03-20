@@ -7,7 +7,6 @@
     <title>Nora Shoof</title>
 </head>
 <body>
-    <script src="script.js"></script>
     <header>
         <h1>Renee's Aquarium</h1>
         <div class="bubbles">
@@ -48,6 +47,7 @@
                         <label for="post-select" class="jump-label" style="color: #FFFF00; font-family: 'Data70'; margin: 15px">Jump to Post:</label>
                         <select id="post-select" class="post-dropdown">
                             <option value="">Select a post...</option>
+                            <option value="post3">This Week (March 20, 2026)</option>
                             <option value="post2">Garden updates (March 8, 2026)</option>
                             <option value="post1">Post 1 - First Post (March 5, 2026)</option>
                             <!-- TEMPLATE: Add new posts here in this format:
@@ -62,7 +62,8 @@
                         <button class="index-toggle" onclick="toggleIndex()" style=" color:white">Click to Show/Hide Post Index</button>
                         <div id="post-index" class="index-content" style="display: block;">
                             <h3 style = "font-size: 12px; color:#006994" >All Blog Posts Showing</h3>
-                            <ul class="post-list" style="font-size: 12px; text-align: center;">
+                            <ul class="post-list" style="font-size: 12px; text-align: left;">
+                                <li><a href="#post3">This Week (March 20, 2026)</a></li>
                                 <li><a href="#post2">Garden updates (March 8, 2026)</a></li>
                                 <li><a href="#post1">Post 1 - First Post (March 5, 2026)</a></li>
                                 <!-- TEMPLATE: Add new posts here in this format:
@@ -77,7 +78,7 @@
         </div>
     
     
-        <div class="section right-section">
+        <div class="blogcontent">
             <div class="posts">
             <!--EXAMPLE: Blog posts how to organize them by month?
             Subscribe?
@@ -96,6 +97,12 @@
                 <div class="divider"></div>
                 </section>
                 -->
+            <section id="post3" class="post">
+                <h2 class="post-title">This Week... freak out etc etc</h2>
+                <time class="post-date" datetime="2026-03-08">March 20, 2026</time>
+                <p class="post-content" style= "color:white">This week I freaked out. I went to Mina's show it was awesome last Saturday. Considering giving up Spotify... found out how to convert flac files to mp3 I am unstoppable? I went to an interview yesterday and the fire alram went off in the middle. I also want to add some sort of iPod capability to this website but I have no idea how to do that. Played volleyball and #stayedwinning. </p>
+                <div class="divider"></div>
+            </section>
             <section id="post2" class="post">
                 <h2 class="post-title">Gardening updates</h2>
                 <time class="post-date" datetime="2026-03-08">March 8, 2026</time>
@@ -112,13 +119,14 @@
             </section>
             </div>
         </div>
+        
     </div>
 
     <div class="footer-scene">
-        <img src="./photos/water_69.png" class="footer-rocks" alt="">
         <footer>
             <p class="footer-text">2025 Nora Shoof</p>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -40,9 +40,6 @@ function toggleIndex() {
     indexContent.style.display = 'block';
     }
 }
-         
-// Function to handle dropdown selection and jump to post
-document.getElementById("post-select").addEventListener("change", handlePostSelection);
 
 function handlePostSelection() {
   const dropdown = document.getElementById('post-select');

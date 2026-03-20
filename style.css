@@ -292,8 +292,7 @@ p {
     transform: rotate(-14deg);
 }
 
-.about a:hover, .blog a:hover, .medias a:hover, .contact a:hover, .fish1 a:hover, .contact-pet1 a:hover, .contact-pet2 a:hover, .contact-pet3 a:hover {
-    color: #FFFF00;
+.about a:hover, .blog a:hover, .medias a:hover, .contact a:hover, .fish1 a:hover {
     filter: drop-shadow(1px 1px 0 #ffffff00);
     text-decoration: underline;
 }
@@ -357,12 +356,15 @@ p {
 .footer-text{
   height: 50px;
   font-family: 'Pixel';
-  color: #B0E0E6;
+  color: white;
   text-align: center;
+  bottom: 0;
+  position: absolute;
+
 }
 
 
-footer {
+/*footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -373,6 +375,11 @@ footer {
     background-size: auto 100px;
     animation: wave-animation 10s linear infinite;
     z-index: 1;
+}*/
+
+footer {
+  bottom: 0;
+  text-align: center;
 }
 
 @font-face {
@@ -455,13 +462,17 @@ main {
   margin-top:20px;
 }
 
-.post-title {
+.post-title, .post-date {
   font-family: 'Inconsolata';
   color: #FF69B4;
+  margin: 10px;
+  text-shadow: 1px 1px black;
+
 }
 
 .post-content {
   font-family: 'Inconsolata';
+  margin: 15px;
 }
 
 .media-library {
@@ -484,25 +495,76 @@ img {
   opacity: 1;
 }
 
-.contact-pets{
-    position: relative;
-    overflow: visible;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+.contact-pets {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
-.contact-pet1 {
-  font-size: 26px;
-  background-image: url(./photos/sealife_21.png);
+.contact-pet {
+  position: relative;
   width: 300px;
-  height: 150px;
-  font-family: Inconsolata;
-  align-self: flex-start;
-  
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-.contact-pet1:hover,.contact-pet2:hover,.contact-pet3:hover {
-    height: 160px;
+.contact-pet img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact-pet a {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  font-family: Inconsolata;
+  filter: drop-shadow(1px 1px 0 #00CEC8);
+  transition: 0.3s;
+  text-align: center;
+  text-decoration: underline;
+    
+}
+
+.linkedin a {
+  color: #0A66C2; /* LinkedIn blue */
+  text-decoration: underline;
+}
+
+.contact-pet:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.blogcontent {
+  background-color: rgba(255, 148, 112, 0.5);
+  border-style: ridge;
+  border-width: 5px;
+  border-color: #FFFF00;
+  position: relative;
+  margin: 50px;
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.media-pics {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px; /* control size */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
